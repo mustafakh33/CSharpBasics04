@@ -40,6 +40,10 @@ namespace CSharpBasics04
             price = 0; 
             return false; 
         }
+        static void PrintBookInfo(string title, int pages = 300) 
+        { 
+            Console.WriteLine($"Book Title: {title}, Pages: {pages}"); 
+        }
 
         static void Main(string[] args)
         {
@@ -121,6 +125,12 @@ namespace CSharpBasics04
             { 
                 Console.WriteLine(price); 
             }
+            #endregion
+
+            #region Question10
+            // 10. Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call it once with only a title, and once passing both a title and pages
+            PrintBookInfo("Clean Code");
+            PrintBookInfo("C# in Depth", 450);
             #endregion
 
         }
