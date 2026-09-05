@@ -20,6 +20,10 @@ namespace CSharpBasics04
         {
             prices[0] -= 5;
         }
+        static void AddBonusPagesByRef(ref int pages)
+        {
+            pages += 50;
+        }
 
         static void Main(string[] args)
         {
@@ -73,6 +77,17 @@ namespace CSharpBasics04
             double[] prices2 = { 25.5, 40.0 };
             ApplyDiscount(prices2);
             Console.WriteLine(prices2[0]);
+            #endregion
+
+            #region Question07
+            // 7. Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref. Call it and print pages afterward. How is the result different from question 5 ?
+            // Answer:
+            // I expect to see 450 because ref allows the method to modify the original variable.
+            // In question 5, a copy of the value was passed, so pages remained 400.
+            // With ref, the original pages variable is changed to 450.
+            int pages3 = 400;
+            AddBonusPagesByRef(ref pages3);
+            Console.WriteLine(pages3);
             #endregion
 
         }
