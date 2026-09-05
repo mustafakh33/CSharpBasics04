@@ -12,6 +12,10 @@ namespace CSharpBasics04
         {
             Console.WriteLine("Book title: " + title);
         }
+        static void AddBonusPages(int pages)
+        {
+            pages += 50;
+        }
         static void Main(string[] args)
         {
             #region Question01
@@ -41,6 +45,18 @@ namespace CSharpBasics04
             #region Question04
             // 4. Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with "Clean Code".
             PrintBookTitle("Clean Code");
+            #endregion
+
+            #region Question05
+            // 5. Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable int pages = 400; and print pages afterward. What do you expect to see, and why?
+            // Answer:
+            // I expect to see 400 because int is a value type in C#.
+            // A copy of pages is passed to the method, so adding 50 changes only the copy.
+            // The original pages variable remains 400.
+
+            int pages = 400;
+            AddBonusPages(pages);
+            Console.WriteLine(pages);
             #endregion
 
         }
