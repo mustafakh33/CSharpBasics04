@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CSharpBasics04
@@ -28,6 +29,16 @@ namespace CSharpBasics04
         static void ReplaceArray(ref double[] prices) 
         { 
             prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+        static bool TryGetPrice(string title, out double price) 
+        { 
+            if (title == "Clean Code")
+            {
+                price = 25.5;
+                return true;
+            } 
+            price = 0; 
+            return false; 
         }
 
         static void Main(string[] args)
@@ -100,6 +111,16 @@ namespace CSharpBasics04
             double[] prices4 = { 25.5, 40.0 };
             ReplaceArray(ref prices4);
             Console.WriteLine(prices4.Length);
+            #endregion
+
+            #region Question09
+            // 9. Write a method bool TryGetPrice(string title, out double price) that returns true and sets
+            // price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0. Call it and print the price if found
+            double price;
+            if (TryGetPrice("Clean Code", out price))
+            { 
+                Console.WriteLine(price); 
+            }
             #endregion
 
         }
