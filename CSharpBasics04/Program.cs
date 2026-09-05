@@ -16,6 +16,11 @@ namespace CSharpBasics04
         {
             pages += 50;
         }
+        static void ApplyDiscount(double[] prices)
+        {
+            prices[0] -= 5;
+        }
+
         static void Main(string[] args)
         {
             #region Question01
@@ -57,6 +62,17 @@ namespace CSharpBasics04
             int pages = 400;
             AddBonusPages(pages);
             Console.WriteLine(pages);
+            #endregion
+
+            #region Question06
+            // 6.  Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.What do you expect to see, and why?
+            // Answer:
+            // I expect to see 20.5 because arrays are reference types in C#. 
+            // The method modifies the original array, so prices[0] changes from 25.5 to 20.5.
+
+            double[] prices2 = { 25.5, 40.0 };
+            ApplyDiscount(prices2);
+            Console.WriteLine(prices2[0]);
             #endregion
 
         }
