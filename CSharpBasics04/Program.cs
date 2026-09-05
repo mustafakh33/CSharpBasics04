@@ -4,6 +4,10 @@ namespace CSharpBasics04
 {
     internal class Program
     {
+        static void PrintWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to the Library!");
+        }
         static void Main(string[] args)
         {
             #region Question01
@@ -23,6 +27,11 @@ namespace CSharpBasics04
 
             Console.WriteLine(shelfCopies[1, 0]);
 
+            #endregion
+
+            #region Question03
+            // 3.Write a method called PrintWelcomeMessage that takes no parameters and prints "Welcome to the Library!".Call it from Main
+            PrintWelcomeMessage();
             #endregion
 
         }
